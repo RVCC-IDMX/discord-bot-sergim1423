@@ -16,6 +16,12 @@ module.exports = {
     } catch (error) {
       console.error(`Error executing ${interaction.commandName}`);
       console.error(error);
+    } if (interaction.isButton()) {
+      if (interaction.customId.includes('-button')) {
+        if (interaction.customId.includes('primary-button')) {
+          await interaction.reply({ content: 'You presses on Primary Button' })
+        }
+      }
     }
   },
 };
